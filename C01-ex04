@@ -1,0 +1,46 @@
+#include <stdio.h>
+
+void  ft_ultimate_div_mod(int *a, int *b)
+{
+  int div;
+  int mod;
+  
+  div = *a;
+  mod = *b;
+  *a = div / mod;
+  *b = div % mod;
+}
+/*
+int main(void)
+{
+  int a;
+  int b;
+  
+  a = 2024;
+  b = 1997;
+  
+  printf("a is %d, b is %d\n", a, b);
+  ft_ultimate_div_mod(&a, &b);
+  printf("a is %d, b is %d\n", a, b);
+}
+*/
+/* ChatGPT explains: f you change the value that a pointer points to, it will affect the underlying variable.
+Pointers store memory addresses, and when you dereference a pointer and modify the value it points to, 
+you are actually modifying the content of the memory at that address.
+
+#include <stdio.h>
+
+int main() {
+    int a = 5;
+    int *ptr = &a;
+
+    printf("Original value of a: %d\n", a);
+
+    // Changing the value through the pointer
+    *ptr = 10;
+
+    printf("Updated value of a: %d\n", a);
+
+    return 0;
+}
+*/
