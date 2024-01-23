@@ -1,0 +1,41 @@
+#include <unistd.h>
+
+int ft_strlen(char *str)
+{
+  int count = 0;
+  while (*str != '\0')
+  {
+    count++;
+    str++;
+  }
+  return  count;
+}
+
+int main()
+{
+  char randomString[] = "123";
+  int outcome = ft_strlen(randomString);
+  printf("Number of characters in this string is: %d\n", outcome);
+  return (0);
+}
+/*
+int count = 0 in the countCharacters function:
+
+This line declares an integer variable named count and
+initializes it with the value 0.
+The purpose of this variable is to
+keep track of the number of characters in the string.
+As the function iterates through the characters of the string using a loop,
+it increments the count variable for each character encountered.
+
+int result
+is a variable in the main function
+used to store the result (i.e., the count of characters)
+returned by the countCharacters function
+
+using char * without const means that
+the function has the potential to modify the contents of the string.
+If your intention is to have a function that
+only counts characters without modifying the string,
+using const char * is generally recommended for better code clarity and safety.
+*/
