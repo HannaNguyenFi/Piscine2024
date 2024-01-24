@@ -1,0 +1,32 @@
+#include <stdio.h>
+
+char    *ft_strncpy(char *dest, char *src, unsigned int n)
+{
+    unsigned int    i;
+
+    i = 0;
+    while (i < n && src[i] != '\0')
+    {
+        dest[i] = src[i];
+        ++i;
+    }
+    while (i < n)
+    {
+        dest[i] = '\0';
+        i++;
+    }
+    return (dest);
+}
+
+int main(void)
+{
+    char src[] = "123";
+    char dest[2];
+
+    printf("%s\n", ft_strncpy(dest, src, 2 ));
+    printf("%s\n", strncpy(dest, src, 2 ));
+}
+/*
+The first while loop copies characters from src to dest until either n characters are copied or the null terminator in src is encountered.
+The second while loop pads the remaining characters in dest with null bytes ('\0') until n characters are reached.
+*/
